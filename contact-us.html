@@ -1,0 +1,188 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Snow Oasis - Contact Us</title>
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="stylesheet" type="text/css" href="assets/css/inav.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="assets/snowfall.jquery.js"></script>
+<link rel="stylesheet" href="assets/css/style.css"></link>
+<!--[if IE 8]><link href="assets/css/inav-ie-8.css" rel="stylesheet" media="screen"><![endif]-->
+<!--[if IE 7]><link href="assets/css/inav-ie-7.css" rel="stylesheet" media="screen"><![endif]-->
+<script type='text/javascript'>
+$(document).ready( function(){
+        $.fn.snow();
+});
+/*
+$(document).ready(function(){
+$(document).snowfall('clear');
+$(document).snowfall({round : true, minSize: 5, maxSize:8}); // add rounded
+});
+*/
+
+/**
+ * jquery.snow - jQuery Snow Effect Plugin
+ *
+ * Available under MIT licence
+ *
+ * @version 1 (21. Jan 2012)
+ * @author Ivan Lazarevic
+ * @requires jQuery
+ * @see http://workshop.rs
+ *
+ * @params minSize - min size of snowflake, 10 by default
+ * @params maxSize - max size of snowflake, 20 by default
+ * @params newOn - frequency in ms of appearing of new snowflake, 500 by default
+ * @params flakeColor - color of snowflake, #FFFFFF by default
+ * @example $.fn.snow({ maxSize: 200, newOn: 1000 });
+ */
+(function($){
+
+	$.fn.snow = function(options){
+
+			var $flake 			= $('<div id="flake" />').css({'position': 'absolute', 'top': '-50px'}).html('&#10052;'),
+				documentHeight 	= $(document).height(),
+				documentWidth	= $(document).width(),
+				defaults		= {
+									minSize		: 10,
+									maxSize		: 20,
+									newOn		: 500,
+									flakeColor	: "#FFFFFF"
+								},
+				options			= $.extend({}, defaults, options);
+
+
+			var interval		= setInterval( function(){
+				var startPositionLeft 	= Math.random() * documentWidth - 100,
+				 	startOpacity		= 0.5 + Math.random(),
+					sizeFlake			= options.minSize + Math.random() * options.maxSize,
+					endPositionTop		= documentHeight - 40,
+					endPositionLeft		= startPositionLeft - 100 + Math.random() * 200,
+					durationFall		= documentHeight * 10 + Math.random() * 5000;
+				$flake
+					.clone()
+					.appendTo('body')
+					.css(
+						{
+							left: startPositionLeft,
+							opacity: startOpacity,
+							'font-size': sizeFlake,
+							color: options.flakeColor
+						}
+					)
+					.animate(
+						{
+							top: endPositionTop,
+							left: endPositionLeft,
+							opacity: 0.2
+						},
+						durationFall,
+						'linear',
+						function() {
+							$(this).remove()
+						}
+					);
+			}, options.newOn);
+
+	};
+
+})(jQuery);
+</script>
+<style type="text/css">
+body {
+padding: 0px;
+margin: 0px;
+}
+
+#background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.stretch { min-width:100%; min-height:100%; width:auto; height:auto; }
+
+#container {
+background: url(assets/img/content_box.png) no-repeat;
+margin-left: auto;
+margin-right: auto;
+width: 800px;
+height: 500px;
+margin-top: 10px;
+overflow: auto;
+padding-left: 5px;
+}
+
+#footer {
+text-align: center;
+}
+
+@font-face {
+	font-family: 'Conv_Maritime_Tropical';
+	src: url('assets/fonts/Maritime_Tropical.eot');
+	src: local('?'), url('assets/fonts/Maritime_Tropical.woff') format('woff'), url('assets/fonts/Maritime_Tropical.ttf') format('truetype'), url('assets/fonts/Maritime_Tropical.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+</style>
+</head>
+<body>
+<div id="background">
+    <img src="assets/img/background.png" class="stretch" />
+</div>
+
+<h1 style="text-align: center;margin-top: 50px;font-family:'Conv_Maritime_Tropical',Sans-Serif;">
+<span style="color: red;">S</span>
+<span style="color: yellow;">N</span>
+<span style="color: blue;">O</span>
+<span style="color: green;">W</span>
+<!--http://www.animated-gifs.eu/trees-palm/0038.gif-->
+&nbsp;
+<img src="assets/img/ptree.gif" width="50" height="50" />
+&nbsp;
+<span style="color: blue;">O</span>
+<span style="color: red;">A</span>
+<span style="color: yellow;">S</span>
+<span style="color: green;">I</span>
+<span style="color: blue;">S</span>
+</h1><!--
+<ul class="nav blue">
+<li class=""><a href="#" class="nav-item">Home</a></li>
+<li class=""><a href="#" class="nav-item">Flavors</a></li>
+<li class=""><a href="#" class="nav-item">About</a></li>
+<li class=""><a href="#" class="nav-item">Contact</a></li>
+</ul>
+-->
+
+<div class="menu-main-nav-container">
+<ul id="menu-main-nav" class="nav blue">
+
+  <li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5 current_page_item menu-item-19"><a href="index.html">Home</a></li>
+
+  <li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="flavors.html">Flavors</a></li>
+
+  <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="pictures.html">Pictures</a></li>
+
+  <li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20"><a href="find-us.html">Find Us</a></li>
+
+  <li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18"><a href="about-us.html">About Us</a></li>
+
+  <li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="contact-us.html">Contact Us</a></li>
+
+</ul>
+</div>
+<script type="text/javascript">$("#menu-main-nav a").attr('class', 'nav-item');</script>
+
+<div id="container">
+    	<p>If you have any questions or concerns please feel free to use the contact form below, and we will get back to you ASAP.</p>
+
+      
+    </div>
+
+<div id="footer">&copy; 2016 - <a href="http://coastalwebdev.com" target="_blank">Coastal Web Dev</a></div>
+</body>
+</html>
